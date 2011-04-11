@@ -73,9 +73,7 @@ def processTranscript(transcript):
 
                 #ask the user to code the token as Female, Mixed, Male
                 prettyprint(guytoken)
-                referentcode = raw_input("Code the gender of this token's referent(s) as eiher Female, Mixed or Male:\n")
 
-                guytoken["referentcode"] = referentcode
                 listofguytokens.append(guytoken)
                 
                 #deal with multiple tokens in a line?
@@ -118,7 +116,6 @@ def writeToCSV(outputfilename, inputfilename, listoftokens):
         else:
             modtoken.append("guy")
 
-        modtoken.append(token["referentcode"])
         escparagraph = re.sub("\n","",re.sub("\r\n","",token["paragraph"]))
         modtoken.append(escparagraph)
         print modtoken
